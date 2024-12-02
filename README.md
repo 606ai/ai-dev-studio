@@ -1,26 +1,79 @@
 # AI Development Studio
 
-A comprehensive, web-based Integrated Development Environment (IDE) for AI development with advanced code generation and management features.
+A comprehensive, web-based Integrated Development Environment (IDE) for AI development with advanced code generation, simulation, and collaboration features.
 
-## Features
+## 🚀 Features
 
+### Core Features
 - Multi-model code suggestion system
 - Support for Ollama and Hugging Face AI models
 - Advanced error handling with custom ErrorBoundary
 - Interactive model playground
 - Real-time chat interface
-- Scrollable suggestion interface
 - Modern, responsive UI
 
-## Tech Stack
+### Advanced Plugins
+1. **Code Review**
+   - Real-time collaborative code reviews
+   - AI-powered review suggestions
+   - Comment threading and resolution
+   - Git workflow integration
+
+2. **Performance Profiling**
+   - CPU and memory profiling
+   - Real-time performance monitoring
+   - Flame graphs and visualizations
+   - AI-powered optimization suggestions
+
+3. **Testing Framework**
+   - Multi-framework test support (Jest, PyTest)
+   - Real-time test execution
+   - Coverage reporting
+   - AI-powered test generation
+
+4. **Workspace Analytics**
+   - Code metrics and insights
+   - Activity tracking
+   - Dependency analysis
+   - Team collaboration metrics
+
+5. **AI Simulation**
+   - End-to-end testing simulation
+   - Scenario-based testing
+   - Performance metrics
+   - AI-driven test scenario generation
+
+## 🛠️ Tech Stack
 
 - Frontend: React 18
 - Language: TypeScript
-- Styling: Material-UI
 - State Management: React Hooks
+- Styling: Material-UI
 - Error Handling: Custom ErrorBoundary
+- AI Integration: Ollama, Hugging Face
+- Testing: Jest, PyTest
+- Version Control: Git
 
-## Getting Started
+## 📦 Project Structure
+
+```
+src/
+├── components/        # React components
+├── plugins/          # Plugin system
+│   ├── review/       # Code review plugin
+│   ├── profiler/     # Performance profiling
+│   ├── testing/      # Testing framework
+│   ├── analytics/    # Workspace analytics
+│   └── simulation/   # AI simulation
+├── services/         # API services
+├── hooks/            # Custom React hooks
+├── layout/           # Layout components
+├── themes/           # Theme management
+├── utils/            # Utilities
+└── workers/          # Web workers
+```
+
+## 🚀 Getting Started
 
 1. Clone the repository:
 ```bash
@@ -38,37 +91,42 @@ npm install
 npm start
 ```
 
-## Project Structure
+## 🔧 Configuration
 
+The project uses several environment variables for configuration. Copy `.env.template` to `.env` and configure:
+
+```env
+REACT_APP_OLLAMA_URL=http://localhost:11434
+REACT_APP_HF_API_KEY=your_hugging_face_api_key
 ```
-src/
-├── components/        # React components
-├── plugins/          # Plugin system
-├── services/         # API services
-└── utils/           # Utilities and constants
+
+## 🧪 Testing
+
+Run the test suite:
+```bash
+npm test
 ```
 
-## Key Components
+Run with coverage:
+```bash
+npm run test:coverage
+```
 
-- AICodeCompletionPlugin: Multi-model code suggestion system
-- HuggingFacePlayground: Interactive AI model testing
-- Chat: Real-time AI chat interface
-- ErrorBoundary: Custom error handling
+## 📚 Documentation
 
-## OneDrive Integration
+Generate documentation:
+```bash
+npm run docs
+```
 
-The AI Development Studio now includes powerful OneDrive integration features:
-- Storage analysis and visualization
-- Automated file organization
-- Large file detection
-- Storage optimization recommendations
-- Secure Microsoft authentication
+## 🐳 Docker
 
-## GitHub Pages Deployment
+Build and run with Docker:
+```bash
+docker-compose up --build
+```
 
-The project is now accessible via GitHub Pages. Visit [https://[your-username].github.io/ai-dev-studio](https://[your-username].github.io/ai-dev-studio) to access the web interface.
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -76,6 +134,12 @@ The project is now accessible via GitHub Pages. Visit [https://[your-username].g
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🔗 Links
+
+- [Documentation](https://yourusername.github.io/ai-dev-studio/docs)
+- [Live Demo](https://yourusername.github.io/ai-dev-studio)
+- [Issue Tracker](https://github.com/yourusername/ai-dev-studio/issues)

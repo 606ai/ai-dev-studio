@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      target: builder  # Use the builder stage for development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_MSAL_CLIENT_ID=8f251dcd-956d-4e20-8e25-d37b31567028
+      - REACT_APP_MSAL_TENANT_ID=0d1c9478-ea7d-4c2e-a295-210684c044cf
+    command: npm start
+    stdin_open: true  # Enable interactive mode for React
+    tty: true        # Enable terminal for debugging
+
+  # Add development tools container
+  devtools:
+    image: node:18-slim
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    depends_on:
+      - app
