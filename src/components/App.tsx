@@ -45,6 +45,8 @@ import AIModelVersionControl from './AIModelVersionControl';
 import AIDatasetManagement from './AIDatasetManagement';
 import AIExperimentTracking from './AIExperimentTracking';
 import AIResourceAllocationDashboard from './AIResourceAllocationDashboard';
+import { Routes, Route } from 'react-router-dom';
+import { StorageManagement } from '../pages/StorageManagement';
 
 // Create a custom theme
 const theme = createTheme({
@@ -118,6 +120,8 @@ const App: React.FC = () => {
         return <RealTimeCollaborationWorkspace />;
       case 'dataset-management':
         return <AIDatasetManagement />;
+      case 'storage':
+        return <StorageManagement />;
       default:
         return <Typography>Select a section</Typography>;
     }
@@ -178,6 +182,11 @@ const App: React.FC = () => {
       name: 'dataset-management', 
       label: 'Dataset Management', 
       icon: <StorageIcon /> 
+    },
+    { 
+      name: 'storage', 
+      label: 'Storage Management', 
+      icon: <StorageIcon /> 
     }
   ];
 
@@ -237,7 +246,10 @@ const App: React.FC = () => {
           }}
         >
           <Container maxWidth="xl">
-            {renderContent()}
+            <Routes>
+              {renderContent()}
+              <Route path="/storage" element={<StorageManagement />} />
+            </Routes>
           </Container>
         </Box>
       </Box>

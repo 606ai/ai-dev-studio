@@ -55,6 +55,19 @@ src/
 - Chat: Real-time AI chat interface
 - ErrorBoundary: Custom error handling
 
+## OneDrive Integration
+
+The AI Development Studio now includes powerful OneDrive integration features:
+- Storage analysis and visualization
+- Automated file organization
+- Large file detection
+- Storage optimization recommendations
+- Secure Microsoft authentication
+
+## GitHub Pages Deployment
+
+The project is now accessible via GitHub Pages. Visit [https://[your-username].github.io/ai-dev-studio](https://[your-username].github.io/ai-dev-studio) to access the web interface.
+
 ## Contributing
 
 1. Fork the repository

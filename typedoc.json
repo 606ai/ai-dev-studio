@@ -1,0 +1,26 @@
+{
+  "entryPoints": ["./src"],
+  "out": "docs",
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/node_modules/**"],
+  "theme": "default",
+  "name": "AI Dev Studio Documentation",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "includeVersion": true,
+  "hideGenerator": true,
+  "categorizeByGroup": true,
+  "categoryOrder": [
+    "Core",
+    "Components",
+    "Services",
+    "Hooks",
+    "Utils",
+    "*"
+  ],
+  "readme": "README.md",
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "@mxssfd/typedoc-theme"
+  ]
+}

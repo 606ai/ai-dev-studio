@@ -12,6 +12,7 @@ import { theme } from './styles/theme';
 import './styles/global.css';
 
 const queryClient = new QueryClient();
+
 const container = document.getElementById('root');
 
 if (!container) {
