@@ -143,3 +143,38 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Documentation](https://yourusername.github.io/ai-dev-studio/docs)
 - [Live Demo](https://yourusername.github.io/ai-dev-studio)
 - [Issue Tracker](https://github.com/yourusername/ai-dev-studio/issues)
+
+## Database Setup
+
+This project uses MongoDB as its primary database. Follow these steps to set up the database:
+
+1. Install MongoDB:
+   - Download and install MongoDB Community Server from [MongoDB Download Center](https://www.mongodb.com/try/download/community)
+   - Or use Docker:
+     ```bash
+     docker run -d -p 27017:27017 --name ai-dev-studio-db mongo:latest
+     ```
+
+2. Configure Environment Variables:
+   - Copy `.env.template` to `.env`
+   - Update the MongoDB connection string if needed
+   - Set your JWT secret key
+
+3. Database Connection:
+   - The application will automatically connect to MongoDB on startup
+   - Default local connection: `mongodb://localhost:27017/ai-dev-studio`
+   - For production, set `MONGODB_URI` in your environment variables
+
+4. Data Models:
+   - Users: Stores user information and authentication
+   - Projects: Stores project data and metadata
+   - Additional models will be added as needed
+
+5. Backup and Restore:
+   ```bash
+   # Backup
+   mongodump --db ai-dev-studio --out ./backup
+
+   # Restore
+   mongorestore --db ai-dev-studio ./backup/ai-dev-studio
+   ```

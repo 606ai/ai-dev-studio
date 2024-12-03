@@ -1,0 +1,74 @@
+{
+  "rules": [
+    {
+      "name": "High Error Rate Alert",
+      "type": "metrics",
+      "schedule": {
+        "interval": "1m"
+      },
+      "params": {
+        "criteria": [
+          {
+            "metric": "count",
+            "comparator": ">",
+            "threshold": 10,
+            "timeSize": 5,
+            "timeUnit": "m",
+            "filter": {
+              "query": {
+                "bool": {
+                  "must": [
+                    {
+                      "match": {
+                        "level": "error"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "actions": {
+        "slack": {
+          "message": "High error rate detected in the last 5 minutes"
+        },
+        "email": {
+          "to": ["alerts@your-domain.com"],
+          "subject": "High Error Rate Alert",
+          "message": "High error rate detected in the system. Please check Kibana dashboard for details."
+        }
+      }
+    },
+    {
+      "name": "Service Performance Degradation",
+      "type": "metrics",
+      "schedule": {
+        "interval": "5m"
+      },
+      "params": {
+        "criteria": [
+          {
+            "metric": "avg",
+            "field": "duration",
+            "comparator": ">",
+            "threshold": 1000,
+            "timeSize": 5,
+            "timeUnit": "m"
+          }
+        ]
+      },
+      "actions": {
+        "slack": {
+          "message": "Service performance degradation detected"
+        },
+        "email": {
+          "to": ["alerts@your-domain.com"],
+          "subject": "Performance Alert",
+          "message": "Service performance has degraded. Average response time is above threshold."
+        }
+      }
+    }
+  ]
+}

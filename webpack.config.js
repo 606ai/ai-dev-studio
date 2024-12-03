@@ -6,7 +6,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
-    publicPath: '/',
+    publicPath: process.env.NODE_ENV === 'production' 
+      ? '/ai-dev-studio/'
+      : '/',
     clean: true,
   },
   module: {
@@ -54,13 +56,20 @@ module.exports = {
     },
   },
   devServer: {
+    host: 'localhost',
+    port: 3000,
+    open: true,
+    hot: true,
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },
-    port: 3000,
-    hot: true,
-    historyApiFallback: true,
     compress: true,
+    client: {
+      overlay: true,
+      progress: true,
+      logging: 'info',
+    },
   },
-  devtool: 'source-map',
+  devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'eval-source-map',
 };

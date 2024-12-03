@@ -1,0 +1,98 @@
+{
+  "version": "8.9.0",
+  "objects": [
+    {
+      "id": "ai-dev-studio-overview",
+      "type": "dashboard",
+      "attributes": {
+        "title": "AI Dev Studio Overview",
+        "description": "Overview of system performance and operations",
+        "hits": 0,
+        "timeRestore": false,
+        "panels": []
+      },
+      "references": []
+    },
+    {
+      "id": "error-rate-visualization",
+      "type": "visualization",
+      "attributes": {
+        "title": "Error Rate Over Time",
+        "visState": {
+          "type": "line",
+          "params": {
+            "type": "line",
+            "grid": { "categoryLines": false },
+            "categoryAxes": [
+              {
+                "id": "CategoryAxis-1",
+                "type": "category",
+                "position": "bottom",
+                "show": true,
+                "scale": { "type": "linear" },
+                "labels": { "show": true, "truncate": 100 },
+                "title": {}
+              }
+            ],
+            "valueAxes": [
+              {
+                "id": "ValueAxis-1",
+                "name": "LeftAxis-1",
+                "type": "value",
+                "position": "left",
+                "show": true,
+                "scale": { "type": "linear", "mode": "normal" },
+                "labels": { "show": true, "rotate": 0, "filter": false, "truncate": 100 },
+                "title": { "text": "Error Count" }
+              }
+            ]
+          }
+        },
+        "savedSearchId": "error-logs"
+      }
+    },
+    {
+      "id": "service-performance",
+      "type": "visualization",
+      "attributes": {
+        "title": "Service Performance",
+        "visState": {
+          "type": "metrics",
+          "params": {
+            "id": "61ca57f0-469d-11e7-af02-69e470af7417",
+            "type": "timeseries",
+            "series": [
+              {
+                "id": "61ca57f1-469d-11e7-af02-69e470af7417",
+                "color": "#68BC00",
+                "split_mode": "everything",
+                "metrics": [
+                  {
+                    "id": "61ca57f2-469d-11e7-af02-69e470af7417",
+                    "type": "avg",
+                    "field": "duration"
+                  }
+                ],
+                "seperate_axis": 0,
+                "axis_position": "right",
+                "formatter": "number",
+                "chart_type": "line",
+                "line_width": 1,
+                "point_size": 1,
+                "fill": 0.5,
+                "stacked": "none",
+                "label": "Average Duration"
+              }
+            ],
+            "time_field": "@timestamp",
+            "index_pattern": "logs-*",
+            "interval": "auto",
+            "axis_position": "left",
+            "axis_formatter": "number",
+            "show_legend": 1
+          }
+        }
+      }
+    }
+  ]
+}
